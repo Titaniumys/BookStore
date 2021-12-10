@@ -1,0 +1,28 @@
+﻿@model Book
+
+
+<div class="container">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <div>
+                <h4 class="card-text"><strong>@Model.name, @Model.FIO,</strong> @Model.DATA.ToString()</h4>
+                <p>
+                    Цена: @Model.price.ToString("c")
+                    <a asp-controller="ShopBook" asp-action="addToBook" asp-route-id="@Model.id" class="ml-5">
+                        <button class="btn btn-danger btn-sm" type="submit">Добавить в корзину</button>
+                    </a>
+                </p>
+            </div>
+<div class="float-right">
+    <a href="@Url.Action("Delete", "Admin", new {id = Model.id})">
+        <button class="btn btn-danger my-2 my-sm-0" type="submit">Удалить</button>
+    </a>
+</div> 
+            <div class="float-left">
+                <a asp-controller="Home" asp-action="Index" type="submit">
+                    <button class="btn btn-danger">На главную страницу</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

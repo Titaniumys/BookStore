@@ -1,0 +1,47 @@
+﻿@model BooksListViewModel
+
+
+@if (!Model.allBooks.Any())
+{
+<div class="text-center">
+    <b><i>Ничего не было найдено.</i></b>
+</div>
+                <div class="text-center mt-3">
+                    <a asp-controller="Home" asp-action="Index" type="submit">
+                        <button class="btn btn-danger">На главную страницу</button>
+                    </a>
+                </div> }
+            else
+            {
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-center mt-1 ml-4">
+                        <div class="row">
+                            @{ foreach (var book in Model.allBooks)
+                                {
+                <div class="col-sm-auto mt-2 mb-4 ml-sm-2">
+
+                    <img class="img-thumbnail" src="@book.img" height="150" width="150" alt="Model.name" />
+                    <h2>
+                        @book.name
+                    </h2>
+                    <p>
+                        Автор:@book.FIO
+                    </p>
+                    <p>
+                        Цена:@book.price.ToString("c")
+                    </p>
+                    <p>
+                        <a class="btn btn-warning" href="@Url.Action("Show", "Books", new {id = book.id})">Описание книги</a>
+                    </p>
+                </div> } }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>}

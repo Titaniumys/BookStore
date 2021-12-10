@@ -1,0 +1,16 @@
+﻿@model BookStore.Data.Models.Book
+<div class="col-sm-auto">
+    <img class="img-thumbnail" src="@Model.img" height="150" width="150" alt="Model.name" />
+    <h2>
+        @Model.name
+    </h2>
+    <p>
+        Автор:@Model.FIO
+    </p>
+    <p>
+        Цена:@Model.price.ToString("c")
+    </p>
+    <p>
+        <a class="btn btn-warning" href="@Url.Action("Show", "Books", new {id = Model.id})">Описание книги</a>
+    </p>
+</div>

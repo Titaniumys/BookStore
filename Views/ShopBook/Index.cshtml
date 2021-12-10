@@ -1,0 +1,16 @@
+﻿@model ShopBookViewModel
+<div class="container">
+    @foreach (var el in Model.shopBook.listShopItem)
+            {
+                <div class="alert alert-warning mt-3">
+                    <b>Книга:</b> @el.book.name<br />
+                    <b>Цена:</b> @el.book.price.ToString("c")
+                    <a asp-action="Delete" asp-controller="ShopBook" asp-route-id="@Model.shopBook.ShopBookId">
+                        <button class="btn btn-danger" type="submit">Удалить</button>
+                    </a>
+
+                </div>
+            }
+    <hr />
+    <a class="btn btn-danger mt-5" asp-controller="Order" asp-action="Checkout">Оплатить</a>
+</div>

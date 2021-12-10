@@ -1,0 +1,74 @@
+﻿@model Book
+
+<div class="container">
+    <div class="col-md-10 offset-md-1">
+        <section>
+            <form method="post">
+                <h4 class="text-center">Окно добавления новой книги</h4>
+                <hr />
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Название книги</label><br />
+                            <input type="text" class="form-control" name="book.name" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Изображение</label><br />
+                            <input type="text" class="form-control" name="book.img" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Цена</label><br />
+                            <input type="text" class="form-control" name="book.price" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Автор</label><br />
+                            <input type="text" class="form-control" name="book.FIO" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Дата издания</label><br />
+                            <input type="text" class="form-control" name="book.DATA" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Популярные</label><br />
+                            <input type="text" class="form-control" name="book.isFavourite" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Доступность</label><br />
+                            <input type="text" class="form-control" name="book.availabe" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Категория</label><br />
+                            <input type="text" class="form-control" name="book.CategoryName" />
+                        </div>
+                    </div> 
+                </div>
+                     <div class="row">
+                            <p class="col text-left">
+                                <button class="btn btn-danger" asp-controller="Admin" asp-action="AddSuccess" type="submit">Добавить</button>
+                            </p>
+                            <p class="col text-right">
+                                <button class="btn btn-danger" asp-controller="Admin" asp-action="Index">Назад</button>
+                            </p>
+                        </div>
+            </form>
+        </section>
+    </div>
+</div>
